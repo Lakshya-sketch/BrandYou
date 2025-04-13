@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio & Resume Builder</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css"> <!-- Main combined stylesheet -->
+    <link rel="stylesheet" href="pattern.css"> <!-- Background pattern styles (might be overridden/hidden by video) -->
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"> <!-- Google Font -->
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video autoplay muted loop id="backgroundVideo" poster="placeholder.jpg">
+        <!-- IMPORTANT: Replace placeholder.jpg if you have a poster image -->
+        <source src="7529-201118756.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Portfolio Builder</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="Templates.html">Templates</a></li>
+                    <!-- Added Profile Link -->
+                    <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                    <!-- Removed About link -->
+                    <!-- Removed Contact link -->
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Create Your Professional Portfolio</h1>
+                <p>Build and download a stunning resume in minutes with our easy-to-use templates</p>
+                <!-- Changed href to signup.html -->
+                <a href="signup.html" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose Our Portfolio Builder?</h2>
+            <div class="features-flex-container">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3>Professional Templates</h3>
+                    <p>Choose from a variety of professionally designed templates that stand out</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Easy & Quick</h3>
+                    <p>Create your portfolio in minutes with our intuitive interface</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-download"></i></div>
+                    <h3>PDF Download</h3>
+                    <p>Download your portfolio as a PDF to share with potential employers</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Create and view your portfolio on any device</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><h3>Portfolio Builder</h3><p>Create professional portfolios in minutes</p></div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Templates.html">Templates</a></li>
+                        <li><a href="profile.html">Profile</a></li> <!-- Added profile link here too -->
+                        <!-- Removed About link -->
+                        <!-- Removed Contact link -->
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Portfolio Builder. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <!-- Common JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

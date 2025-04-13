@@ -1,0 +1,286 @@
+:root {
+    --primary-color: #1149a4; /* Used for links */
+    --text-color: #119DA4; /* Base text color (used in body, but overridden elsewhere) */
+    --bg-color: #1d1d1d; /* Main page background */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg-color);
+    color: var(--text-color); /* Default text color */
+    line-height: 1.5;
+    /* Use flexbox to center the #app container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#app {
+    width: 100%; /* Allow app container to span width */
+    max-width: 1400px; /* Max width constraint for the whole layout */
+    margin: 0 auto; /* Center the app container horizontally */
+    /* Height/centering is handled by body and .container */
+}
+
+.container {
+    background: #119DA4; /* Background of the overall rounded container (turquoise) */
+    border-radius: 24px;
+    display: flex;
+    width: 100%; /* Take full width of #app */
+    height: 80vh; /* Set container height to 80% of viewport height */
+    overflow: hidden; /* Keep content within rounded corners */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.left-content {
+    flex: 1; /* Take up remaining space */
+    padding: 4rem;
+    position: relative; /* For absolute positioning of video and overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align text to the bottom */
+    overflow: hidden; /* Ensure video doesn't spill out */
+    background-color: #000; /* Fallback background if video fails */
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area, potentially cropping */
+    z-index: 0; /* Behind overlay and text */
+}
+
+.left-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Gradient overlay from transparent top to dark bottom */
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+    z-index: 1; /* Above video, below text */
+}
+
+.left-content h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: white;
+    position: relative; /* To ensure z-index works */
+    z-index: 2; /* Above overlay */
+}
+
+.left-content p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    position: relative; /* To ensure z-index works */
+    z-index: 2; /* Above overlay */
+}
+
+.auth-section {
+    width: 480px; /* Fixed width for the right panel */
+    flex-shrink: 0; /* Prevent this panel from shrinking */
+    padding: 3rem;
+    background: hsl(231, 30%, 18%); /* Dark blue background for auth panel */
+    color: white; /* Default text color within auth panel */
+    overflow-x: hidden; /* Allow scrolling if Clerk content is tall */
+}
+
+.auth-header {
+    margin-bottom: 2rem;
+}
+
+.auth-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.auth-header p {
+    color: rgba(255, 255, 255, 0.6); /* Lighter text for subheading */
+}
+
+.auth-header p a {
+    color: var(--primary-color); /* Blue link color */
+    text-decoration: none;
+}
+.auth-header p a:hover {
+     text-decoration: underline;
+}
+
+/* --- Styles for the OLD static form --- */
+/* These rules are based on your original CSS snippet. */
+/* They WON'T apply to the Clerk component unless Clerk specifically uses these class names (unlikely) */
+/* You can keep them or remove them if you are only using Clerk. */
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1); /* Dark input background */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color); /* Highlight border on focus */
+}
+
+.name-fields {
+    display: flex;
+    gap: 1rem;
+}
+
+.signup-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 1.5rem 0;
+    transition: background 0.3s ease;
+}
+
+.signup-btn:hover {
+    background: #6A5ACD; /* Different hover color from original snippet */
+}
+
+.social-signup {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.social-signup p {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1rem;
+    position: relative; /* For positioning the lines */
+}
+
+/* Lines around "Or register with" text */
+.social-signup p::before,
+.social-signup p::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%; /* Adjust width of lines */
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.social-signup p::before {
+    left: 0;
+}
+
+.social-signup p::after {
+    right: 0;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-btn {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background 0.3s ease;
+}
+
+.social-btn:hover {
+    background: rgba(255, 255, 255, 0.1); /* Slight highlight on hover */
+}
+
+.social-btn img {
+    width: 20px;
+    height: 20px;
+}
+/* --- End of Styles for OLD static form --- */
+
+
+/* Style for the Clerk component target div */
+#clerk-signup-target {
+    margin-top: 1rem; /* Add some space above the Clerk component */
+    /* Add height/min-height if needed, but Clerk usually manages its own */
+}
+
+/* Style for Clerk status/error messages */
+#clerk-status {
+    color: #f87171; /* Reddish color for errors */
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+
+/* --- Responsive Styles --- */
+@media (max-width: 968px) {
+    /* Adjust body alignment for smaller screens */
+    body {
+        align-items: flex-start; /* Align container to top */
+        padding-top: 2rem; /* Add some space at the top */
+        padding-bottom: 2rem; /* Add space at the bottom */
+    }
+
+    #app {
+        max-width: 95%; /* Allow container to be wider */
+    }
+
+    .container {
+        flex-direction: column; /* Stack left and right content */
+        height: auto; /* Let height be determined by content */
+        min-height: 80vh; /* Try to maintain substantial height */
+    }
+
+    .left-content {
+        min-height: 250px; /* Reduce minimum height for video section */
+        padding: 2rem; /* Reduce padding */
+    }
+
+    .auth-section {
+        width: 100%; /* Auth section takes full width below */
+        padding: 2rem; /* Reduce padding */
+        overflow-y: visible; /* Remove scroll on mobile if not desired */
+    }
+
+    /* This rule for .name-fields is part of the old static form styling */
+    .name-fields {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

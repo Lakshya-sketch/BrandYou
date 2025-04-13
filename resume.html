@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Generated Resume</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css"> <!-- Main combined stylesheet -->
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet"> <!-- For Template 4 -->
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Portfolio Builder</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Templates.html">Templates</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger"><span></span><span></span><span></span></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Resume Action Buttons Bar -->
+    <div class="resume-actions">
+        <div class="container">
+            <button id="downloadPdfBtn" class="btn btn-primary">Download as PDF</button>
+            <a href="Form.html" id="editBtn" class="btn btn-secondary">Edit Resume</a>
+            <a href="Templates.html" class="btn btn-secondary">Choose Different Template</a>
+        </div>
+    </div>
+
+    <!-- Container for Template 1 (Minimalist) -->
+    <div id="template1" class="resume-container template1">
+        <header class="resume-header">
+             <div class="header-left"><h1 class="full-name">Full Name</h1><p class="professional-title">Professional Title</p></div>
+            <div class="header-right"><p class="phone">(+00)123456789</p><p><a href="#" class="email">email@example.com</a></p><p><a href="#" class="website" target="_blank">website.com</a></p><p class="address" style="display:none;">Address</p></div>
+        </header>
+         <section class="resume-section overview-section"><div class="section-title"><h2>Overview</h2></div><div class="section-content"><p class="overview">Overview placeholder...</p></div></section>
+        <section class="resume-section experience-section"><div class="section-title"><h2>Experience</h2></div><div class="section-content experience-list"><div class="experience-item"><h3>Position</h3><p class="company-info"><span class="company">Company</span> | <span class="duration">Date</span></p><ul><li>Responsibility</li></ul></div></div></section>
+         <section class="resume-section education-section"><div class="section-title"><h2>Education</h2></div><div class="section-content education-list"><div class="education-item"><h3>Degree</h3><p class="institution-date"><span class="institution">Institution</span> | <span class="duration">Date</span></p></div></div></section>
+          <section class="resume-section skills-section"><div class="section-title"><h2>Skills</h2></div><div class="section-content"><p class="skills">Skills placeholder...</p></div></section>
+    </div>
+
+    <!-- Container for Template 2 (Modern) -->
+    <div id="template2" class="resume-container template2">
+        <header class="resume-header"><div class="header-main"><h1 class="full-name">Full Name</h1><p class="professional-title">Professional Title</p></div><div class="avatar"><span class="initials">AB</span></div></header>
+       <div class="resume-body">
+           <aside class="resume-left">
+                <section class="resume-section contact-info"><h2>Contact</h2><div class="contact-list"><p class="contact-item"><i class="fas fa-envelope icon"></i> <a href="#" class="email">email</a></p><p class="contact-item"><i class="fas fa-phone icon"></i> <span class="phone">phone</span></p><p class="contact-item"><i class="fas fa-globe icon"></i> <a href="#" class="website" target="_blank">website</a></p><p class="contact-item" style="display:none;"><i class="fas fa-map-marker-alt icon"></i> <span class="address">address</span></p></div></section>
+                <section class="resume-section education-section"><h2>Education</h2><div class="education-list"><div class="education-item"><h3>Degree</h3><p class="institution-date">Institution | Duration</p></div></div></section>
+                 <section class="resume-section skills-section"><h2>Skills</h2><p class="skills">Skills...</p></section>
+           </aside>
+           <main class="resume-right"><section class="resume-section overview-section"><p class="overview">Overview...</p></section><section class="resume-section experience-section"><h2>Experience</h2><div class="experience-list"><div class="experience-item"><h3>Position</h3><p class="company-info">Company | Duration</p><ul><li>Responsibility</li></ul></div></div></section></main>
+       </div>
+    </div>
+
+    <!-- Container for Template 3 (Executive) -->
+    <div id="template3" class="resume-container template3">
+        <header class="resume-header"><div class="header-main"><h1 class="full-name">Full Name</h1><p class="professional-title">Professional Title</p></div><div class="avatar"><span class="initials">AB</span></div></header>
+         <div class="resume-body">
+           <aside class="resume-left">
+                <section class="resume-section contact-info"><h2>Contact</h2><div class="contact-list"><p class="contact-item"><i class="fas fa-envelope icon"></i> <a href="#" class="email">email</a></p><p class="contact-item"><i class="fas fa-phone icon"></i> <span class="phone">phone</span></p><p class="contact-item"><i class="fas fa-globe icon"></i> <a href="#" class="website" target="_blank">website</a></p><p class="contact-item" style="display:none;"><i class="fas fa-map-marker-alt icon"></i> <span class="address">address</span></p></div></section>
+                <section class="resume-section education-section"><h2>Education</h2><div class="education-list"><div class="education-item"><h3>Degree</h3><p class="institution-date">Institution | Duration</p></div></div></section>
+                 <section class="resume-section skills-section"><h2>Skills</h2><p class="skills">Skills...</p></section>
+           </aside>
+           <main class="resume-right"><section class="resume-section overview-section"><p class="overview">Overview...</p></section><section class="resume-section experience-section"><h2>Experience</h2><div class="experience-list"><div class="experience-item"><h3>Position</h3><p class="company-info">Company | Duration</p><ul><li>Responsibility</li></ul></div></div></section></main>
+       </div>
+    </div>
+
+    <!-- Container for Template 4 (Creative) -->
+    <div id="template4" class="resume-container template4">
+        <header class="resume-header"><h1 class="full-name">Full Name</h1><p class="professional-title">Professional Title</p></header>
+       <section class="resume-section overview-section"><p class="overview">Overview...</p></section>
+        <section class="resume-contact">
+            <div class="contact-item"><span class="contact-icon">📞</span> <span class="phone">(...)</span></div>
+            <div class="contact-item"><span class="contact-icon">✉️</span> <a href="#" class="email link">email</a></div>
+            <div class="contact-item"><span class="contact-icon">🌐</span> <a href="#" class="website link" target="_blank">website</a></div>
+             <div class="contact-item" style="display:none;"><span class="contact-icon">📍</span> <span class="address">Address</span></div>
+        </section>
+         <div class="resume-body">
+            <aside class="resume-left"><section class="resume-section education-section"><h2>Education</h2><div class="education-list"><div class="education-item"><h3>Degree</h3><p class="institution-date">Institution | Duration</p></div></div></section><section class="resume-section skills-section"><h2>Skills</h2><p class="skills">Skills...</p></section></aside>
+            <main class="resume-right"><section class="resume-section experience-section"><h2>Work Experience</h2><div class="experience-list"><div class="experience-item"><h3>Position</h3><p class="company-info">Company | Duration</p><ul><li>Responsibility</li></ul></div></div></section></main>
+       </div>
+    </div>
+
+    <!-- Container for Template 5 (Classic) -->
+    <div id="template5" class="resume-container template5">
+        <header class="resume-header"><h1 class="full-name">Full Name</h1><div class="title-bar"><p class="professional-title">Professional Title</p></div></header>
+         <div class="resume-body">
+            <aside class="resume-left">
+               <section class="resume-section contact-section"><h2>Contact</h2><div class="contact-list"><p class="contact-item"><i class="fas fa-globe"></i> <a href="#" class="website" target="_blank">website</a></p><p class="contact-item"><i class="fas fa-envelope"></i> <a href="#" class="email">email</a></p><p class="contact-item"><i class="fas fa-phone"></i> <span class="phone">(...)</span></p><p class="contact-item" style="display:none;"><i class="fas fa-map-marker-alt"></i> <span class="address">Address</span></p></div></section>
+                <section class="resume-section education-section"><h2>Education</h2><div class="education-list"><div class="education-item"><h3>Degree</h3><p class="institution-date">Institution | Duration</p></div></div></section>
+                 <section class="resume-section skills-section"><h2>Skills</h2><p class="skills">Skills...</p></section>
+            </aside>
+            <main class="resume-right"><section class="resume-section overview-section"><h2>Overview</h2><p class="overview">Overview...</p></section><section class="resume-section experience-section"><h2>Experience</h2><div class="experience-list"><div class="experience-item"><h3>Position</h3><p class="company-info">Company | Duration</p><ul><li>Responsibility</li></ul></div></div></section></main>
+         </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><h3>Portfolio Builder</h3><p>Create professional portfolios in minutes</p></div>
+                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="Templates.html">Templates</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+                <div class="footer-social"><h4>Connect With Us</h4><div class="social-icons"><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></div></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Portfolio Builder. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <!-- PDF Generation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script src="resume.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Portfolio Builder</title>
+    <!-- Link to your signup.css -->
+    <link rel="stylesheet" href="signup.css">
+    <!-- Link to main styles if needed for elements outside this component -->
+    <!-- <link rel="stylesheet" href="styles.css"> --> 
+    <!-- Google Font specified in signup.css -->
+
+    <!-- Link to the separate Clerk initialization script -->
+    <!-- 'defer' ensures it runs after HTML parsing -->
+    <script defer src="clerk-init.js"></script>
+
+</head>
+<body>
+    <!-- Main App Container -->
+    <div id="app">
+        <!-- Layout Container -->
+        <div class="container">
+
+            <!-- Left Content (Video and Text) -->
+            <div class="left-content">
+                <video class="background-video" autoplay muted loop playsinline poster="placeholder.jpg">
+                     <!-- Make sure video path is correct -->
+                    <source src="7529-201118756.mp4" type="video/mp4"> 
+                    Your browser does not support the video tag.
+                </video>
+                <!-- Overlay is applied via CSS ::before -->
+                <h1>Create Resumes</h1>
+                <p>Let Your Resume Represent Your Hardwork</p>
+            </div>
+
+            <!-- Right Content (Authentication Section) -->
+            <div class="auth-section">
+                <!-- Header remains -->
+                <div class="auth-header">
+                    <h2>Create an account</h2>
+                    <p>Already have an account? <a href="login.html">Log in</a></p> 
+                </div>
+
+                <!-- === CLERK SIGN-UP COMPONENT TARGET === -->
+                <!-- ClerkJS will inject its UI content into this div -->
+                <div id="clerk-signup-target"></div> 
+                <!-- === End of Clerk Mount Target === -->
+
+                <!-- Placeholder for loading/error messages from the script -->
+                <div id="clerk-status" style="color: #f87171; margin-top: 1rem; text-align: center;"></div>
+
+                <!-- 
+                    NOTE: The original static form elements (name, email, password inputs, 
+                          buttons, social login placeholders) have been removed. 
+                          Clerk will render the necessary UI based on your dashboard settings.
+                -->
+            </div> <!-- End auth-section -->
+
+        </div> <!-- End container -->
+    </div> <!-- End app -->
+</body>
+</html>

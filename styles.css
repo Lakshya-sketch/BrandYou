@@ -1,0 +1,2054 @@
+/* styles.css - Combined Stylesheet */
+
+/* --- Base Styles & Variables --- */
+:root {
+    --primary-color: #4361ee;
+    --primary-dark: #3a56d4;
+    --secondary-color: #4cc9f0;
+    --text-color: #333;
+    --text-light: #666;
+    --background-color: #f8f9fa;
+    --background-alt: #e9ecef;
+    --border-color: #e0e0e0;
+    --success-color: #4caf50;
+    --warning-color: #ff9800;
+    --error-color: #f44336;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    position: relative;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Typography --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: 1px solid #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+    color: white;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.btn-danger {
+    background-color: var(--error-color);
+    color: white;
+    border-color: var(--error-color);
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+    color: white;
+}
+
+/* --- Navbar --- */
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    transition: var(--transition);
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* --- Landing Page: Hero --- */
+.hero {
+    padding: 80px 0;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero h1 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+/* --- Landing Page: Features --- */
+.features {
+    padding: 80px 0;
+    text-align: center;
+    background-color: white;
+}
+
+.features h2 {
+    margin-bottom: 3rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* --- Landing Page: How It Works --- */
+.how-it-works {
+    padding: 80px 0;
+}
+
+.how-it-works h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.step {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.cta-center {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* --- Landing Page: About & Contact --- */
+.about {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact {
+    padding: 80px 0;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* --- Common Form Group Styling --- */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="url"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: var(--text-light);
+    font-size: 0.8rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* --- Templates Page Styles --- */
+.templates-hero {
+    padding: 60px 0;
+    background-color: var(--background-alt);
+    text-align: center;
+}
+
+.templates-hero h1 {
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+}
+
+.templates-hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--text-light);
+}
+
+.templates-grid {
+    padding: 60px 0;
+}
+
+.templates {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.template-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.template-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.template-image {
+    height: 400px;
+    overflow: hidden;
+    background-color: #eee;
+}
+
+.template-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.3s ease;
+}
+
+.template-card:hover .template-image img {
+    transform: scale(1.05);
+}
+
+.template-info {
+    padding: 20px;
+}
+
+.template-info h3 {
+    margin-bottom: 10px;
+}
+
+.template-info p {
+    margin-bottom: 15px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* --- Form Page Styles (`Form.html`) --- */
+.form-section {
+    padding: 60px 0;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.template-preview {
+    margin: 1rem 0 2rem;
+    text-align: center;
+}
+
+.template-preview h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.template-preview-img {
+    max-width: 200px;
+    height: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+.resume-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.resume-form h2 {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1.5rem;
+}
+
+.resume-form h2:first-of-type {
+    margin-top: 0;
+}
+
+.form-divider {
+    margin: 2rem 0;
+    border: none;
+    border-top: 1px dashed var(--border-color);
+}
+
+.experience-entry,
+.education-entry {
+    position: relative;
+    padding: 1.5rem 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.experience-entry:first-child,
+.education-entry:first-child {
+    padding-top: 0;
+}
+
+.experience-entry:last-child,
+.education-entry:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.remove-entry {
+    float: right;
+    margin-top: -2.5rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* --- Resume Page Styles (`resume.html`) --- */
+.resume-actions {
+    position: sticky;
+    top: 70px;
+    z-index: 900;
+    background-color: rgba(248, 249, 250, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.resume-actions .container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Base Resume Container */
+.resume-container {
+    max-width: 850px;
+    margin: 0 auto 60px;
+    padding: 40px;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    font-family: 'Inter', sans-serif;
+    display: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    font-size: 10pt;
+}
+
+.resume-header {
+    margin-bottom: 30px;
+}
+
+.resume-section {
+    margin-bottom: 25px;
+}
+
+.resume-section h2 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #333;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.resume-section h2:first-of-type {
+    margin-top: 0;
+}
+
+.resume-body {
+    display: flex;
+    gap: 30px;
+}
+
+.resume-left {
+    flex: 1;
+}
+
+.resume-right {
+    flex: 2;
+}
+
+/* Common Resume Content Elements */
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.contact-item i,
+.contact-item .icon,
+.contact-item .contact-icon {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.contact-item a {
+    color: var(--primary-color);
+}
+
+.experience-list,
+.education-list {
+    margin-top: 0;
+}
+
+.experience-item,
+.education-item {
+    margin-bottom: 20px;
+}
+
+.experience-item h3,
+.education-item h3 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+    font-weight: 700;
+    color: #000;
+}
+
+.experience-item .company-info,
+.education-item .institution-date {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.experience-item ul {
+    margin-top: 8px;
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.experience-item li {
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-light);
+}
+
+.skills-section p,
+.skills-section ul {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-light);
+}
+
+.skills-section ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+/* --- Specific Template Styles --- */
+/* Template 1: Minimalist */
+.template1 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.template1 .resume-header {
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.template1 .header-left h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #000;
+}
+
+.template1 .header-left p {
+    color: #555;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.template1 .header-right {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.template1 .header-right p {
+    margin-bottom: 3px;
+}
+
+.template1 .header-right .email,
+.template1 .header-right .website {
+    color: #d9534f;
+}
+
+.template1 .resume-section {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.template1 .section-title {
+    flex: 0 0 150px;
+    padding-right: 20px;
+}
+
+.template1 .section-title h2 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin: 0;
+    color: #333;
+}
+
+.template1 .section-content {
+    flex: 1;
+}
+
+.template1 .experience-item .company-info .company {
+    font-weight: bold;
+    color: #333;
+}
+
+.template1 .experience-item .company-info .duration {
+    font-style: italic;
+    color: #777;
+}
+
+/* Template 2: Modern */
+.template2 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10pt;
+}
+
+.template2 .resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.template2 .header-main h1 {
+    font-size: 18pt;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    color: #000;
+}
+
+.template2 .header-main p {
+    font-size: 9pt;
+    color: #555;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.template2 .avatar {
+    width: 70px;
+    height: 70px;
+    background-color: #f1f3f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20pt;
+    font-weight: bold;
+    color: #555;
+}
+
+.template2 .resume-body {
+    gap: 30px;
+}
+
+.template2 .resume-left {
+    flex: 1;
+    max-width: 250px;
+    padding-right: 30px;
+}
+
+.template2 .resume-right {
+    flex: 2.5;
+    border-left: 1px solid #e9ecef;
+    padding-left: 30px;
+}
+
+.template2 .resume-section h2 {
+    font-size: 11pt;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.template2 .contact-item {
+    font-size: 9pt;
+}
+
+.template2 .contact-item i {
+    color: #888;
+    font-size: 12pt;
+}
+
+.template2 .contact-item .email,
+.template2 .contact-item .website {
+    color: #d9534f;
+}
+
+.template2 .education-item h3 {
+    font-size: 10pt;
+}
+
+.template2 .education-item p {
+    font-size: 9pt;
+    margin-bottom: 2px;
+}
+
+.template2 .education-item .duration {
+    font-size: 8pt;
+    color: #777;
+}
+
+.template2 .experience-item h3 {
+    font-size: 10pt;
+}
+
+.template2 .experience-item .company-info {
+    font-size: 9pt;
+    font-weight: bold;
+}
+
+.template2 .experience-item ul li {
+    font-size: 9pt;
+}
+
+/* Template 3: Executive (Matches Image Provided) */
+.template3 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10pt;
+}
+
+.template3 .resume-header {
+    background-color: #0e8a7d;
+    /* Teal color */
+    color: white;
+    padding: 30px 40px;
+    /* Match padding of main container */
+    margin: -40px -40px 30px;
+    /* Extend to edges */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.template3 .header-main h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: white;
+    font-weight: 700;
+}
+
+.template3 .header-main p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+.template3 .avatar {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Darker overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.template3 .resume-body {
+    gap: 30px;
+}
+
+.template3 .resume-left {
+    flex: 1;
+    max-width: 250px;
+    padding-right: 30px;
+}
+
+.template3 .resume-right {
+    flex: 2.5;
+    border-left: 1px solid var(--border-color, #eee);
+    padding-left: 30px;
+}
+
+.template3 .resume-section h2 {
+    color: #333;
+    /* Dark text for section titles */
+    font-size: 1rem;
+    border-bottom-color: var(--border-color, #eee);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.template3 .contact-item {
+    font-size: 0.9rem;
+}
+
+.template3 .contact-item i {
+    color: #0e8a7d;
+    width: 18px;
+    text-align: center;
+    margin-right: 8px;
+}
+
+/* Teal icons */
+.template3 .education-item h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.template3 .education-item .institution-date {
+    font-size: 0.9rem;
+}
+
+.template3 .experience-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.template3 .experience-item .company-info {
+    font-size: 0.9rem;
+}
+
+.template3 .experience-item ul li {
+    font-size: 0.95rem;
+}
+
+.template3 .skills-section {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Skills text */
+
+/* Template 4: Creative */
+.template4 {
+    font-size: 10pt;
+}
+
+.template4 .resume-header {
+    margin-bottom: 20px;
+}
+
+.template4 .resume-header h1 {
+    color: #556B2F;
+    font-size: 26pt;
+    margin-bottom: 5px;
+    font-family: Georgia, serif;
+}
+
+.template4 .resume-header p {
+    font-size: 11pt;
+    color: var(--text-light, #666);
+    margin: 0 0 20px 0;
+}
+
+.template4 .overview-section p {
+    font-size: 10pt;
+    margin-bottom: 30px;
+}
+
+.template4 .resume-contact {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 25px 0;
+    padding: 15px 0;
+    border-top: 1px dotted #ccc;
+    border-bottom: 1px dotted #ccc;
+}
+
+.template4 .contact-item {
+    flex: 1;
+    position: relative;
+}
+
+.template4 .contact-item+.contact-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10%;
+    bottom: 10%;
+    width: 1px;
+    background-image: linear-gradient(to bottom, #ccc 50%, transparent 50%);
+    background-size: 1px 8px;
+}
+
+.template4 .contact-icon {
+    font-size: 1.5rem;
+    color: #fff;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: #556B2F;
+    border-radius: 50%;
+    line-height: 40px;
+    margin: 0 auto 10px;
+}
+
+.template4 .contact-item p {
+    margin: 0;
+    font-size: 9pt;
+}
+
+.template4 .contact-item .link,
+.template4 .contact-item a {
+    color: #556B2F;
+}
+
+.template4 .resume-body {
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.template4 .resume-left {
+    flex: 1;
+    padding-right: 30px;
+}
+
+.template4 .resume-right {
+    flex: 1.8;
+    border-left: 1px dotted #ccc;
+    padding-left: 30px;
+}
+
+.template4 .resume-section h2 {
+    color: #556B2F;
+    font-size: 14pt;
+    margin-bottom: 15px;
+    font-family: Georgia, serif;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.template4 .education-item h3,
+.template4 .experience-item h3 {
+    font-size: 10pt;
+    text-transform: uppercase;
+}
+
+.template4 .education-item p,
+.template4 .experience-item p {
+    font-size: 9pt;
+}
+
+.template4 .education-item .institution-date .duration,
+.template4 .experience-item .company-info .duration {
+    font-size: 8pt;
+    color: #888;
+}
+
+/* Template 5: Classic */
+.template5 {
+    font-size: 10pt;
+}
+
+.template5 .resume-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.template5 .resume-header h1 {
+    font-size: 24pt;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.template5 .title-bar {
+    background-color: #a9cce3;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.template5 .title-bar p {
+    margin: 0;
+    color: white;
+    font-size: 11pt;
+}
+
+.template5 .resume-body {
+    gap: 40px;
+}
+
+.template5 .resume-left {
+    flex: 1;
+    max-width: 300px;
+    padding-right: 20px;
+}
+
+.template5 .resume-right {
+    flex: 1.5;
+    padding-left: 10px;
+}
+
+.template5 .resume-section h2 {
+    font-size: 14pt;
+    color: #000;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+.template5 .contact-section h2 {
+    margin-bottom: 10px;
+}
+
+.template5 .contact-list p {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 10pt;
+}
+
+.template5 .contact-list i {
+    color: #555;
+    margin-right: 8px;
+    width: 15px;
+}
+
+.template5 .contact-list a {
+    color: #d9534f;
+}
+
+.template5 .education-item h3,
+.template5 .experience-item h3 {
+    font-size: 11pt;
+}
+
+.template5 .education-item .institution-date .duration,
+.template5 .experience-item .company-info .duration {
+    font-size: 9pt;
+    color: #777;
+}
+
+.template5 .experience-item .description {
+    font-size: 10pt;
+    line-height: 1.6;
+    margin-top: 5px;
+    color: var(--text-light);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-logo h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.footer-logo p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-links h4,
+.footer-social h4 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 992px) {
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        margin-top: 30px;
+    }
+
+    .steps {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .remove-entry {
+        position: static;
+        float: none;
+        display: block;
+        margin-top: 0.5rem;
+        text-align: right;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links ul {
+        align-items: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .templates {
+        grid-template-columns: 1fr;
+    }
+
+    .template-image {
+        height: 300px;
+    }
+
+    .resume-container {
+        padding: 20px;
+    }
+
+    .resume-body {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .resume-left,
+    .resume-right {
+        flex: none;
+        max-width: 100%;
+        padding: 0 !important;
+        border-left: none !important;
+        margin-left: 0 !important;
+    }
+
+    .template1 .resume-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .template1 .header-right {
+        text-align: center;
+    }
+
+    .template1 .resume-section {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .template1 .section-title {
+        flex: none;
+        margin-bottom: 5px;
+    }
+
+    .template2 .resume-header,
+    .template3 .resume-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .template2 .avatar,
+    .template3 .avatar {
+        margin-top: 15px;
+    }
+
+    .template3 .resume-header {
+        margin: -20px -20px 20px;
+        padding: 20px;
+    }
+
+    .template4 .resume-contact {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+        text-align: left;
+    }
+
+    .template4 .contact-item {
+        border-bottom: 1px dotted #ccc;
+        padding-bottom: 10px;
+    }
+
+    .template4 .contact-item:last-child {
+        border-bottom: none;
+    }
+
+    .template4 .contact-item+.contact-item::before {
+        display: none;
+    }
+
+    .template4 .contact-icon {
+        display: inline-block;
+        margin: 0 10px 0 0;
+        vertical-align: middle;
+    }
+
+    .resume-actions .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .resume-actions .btn {
+        width: 100%;
+    }
+}
+
+/* styles.css */
+
+/* --- Bubble Styles --- */
+
+#bubble-container {
+    position: fixed; /* Fixed position stays relative to viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevent bubbles from causing scrollbars */
+    z-index: -1;      /* Place bubbles behind all other content */
+    pointer-events: none; /* Allow clicks/interactions to pass through */
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px; /* Start slightly below the viewport */
+    border-radius: 50%;
+    opacity: 0; /* Start invisible, fade in with animation */
+    /* The animation will handle movement and fading */
+    animation: floatUp ease-in infinite;
+    /* box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5); Optional inner glow */
+}
+
+/* Animation Keyframes */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0; /* Start transparent */
+    }
+    10% {
+        /* Fade in near the bottom */
+        opacity: 0.7;
+    }
+    50% {
+        /* Apply horizontal drift partway up */
+        transform: translateX(calc(var(--driftX, 0) * 100px)); /* Adjust 100px for more/less drift */
+    }
+    90% {
+         /* Start fading out near the top */
+        opacity: 0.7;
+    }
+    100% {
+        /* Move far above the viewport and fade out completely */
+        transform: translateY(-120vh) translateX(calc(var(--driftX, 0) * 200px));
+        opacity: 0;
+    }
+}
+
+/* Ensure body allows fixed positioning context if needed, though usually not necessary */
+/* body { position: relative; } */
+/* styles.css - Combined Stylesheet */
+
+/* --- Base Styles & Variables --- */
+:root {
+    --primary-color: #4361ee;
+    --primary-dark: #3a56d4;
+    --secondary-color: #4cc9f0;
+    --text-color: #333;
+    --text-light: #666;
+    --background-color: #f8f9fa; /* Base background, might be covered by video */
+    --background-alt: #e9ecef;
+    --border-color: #e0e0e0;
+    --success-color: #4caf50;
+    --warning-color: #ff9800;
+    --error-color: #f44336;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    /* background-color: var(--background-color); <-- Set by video */
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* --- Background Video Styling --- */
+#backgroundVideo {
+    position: fixed; /* Fixes video to viewport */
+    right: 0;
+    bottom: 0;
+    min-width: 100%; /* Ensure coverage */
+    min-height: 100%; /* Ensure coverage */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    z-index: -100; /* Place behind all other content */
+    background: url('placeholder.jpg') no-repeat center center fixed; /* Fallback image */
+    background-size: cover;
+    object-fit: cover; /* Cover the area, cropping if needed */
+}
+
+/* Optional: Style for content over video if needed */
+/* .content-over-video { position: relative; z-index: 1; color: white; text-shadow: 1px 1px 2px black; } */
+
+
+/* --- Container Centering --- */
+.container {
+    width: 80%; /* Or adjust percentage as needed */
+    max-width: 1200px; /* Max width for content */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px; /* Content spacing */
+    position: relative; /* For z-index context if needed */
+    z-index: 2; /* Above background video/pattern */
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Typography --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; } /* Adjusted below for feature cards */
+h4 { font-size: 1.25rem; }
+p { margin-bottom: 1rem; }
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: 1px solid #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+    color: white;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.btn-danger {
+    background-color: var(--error-color);
+    color: white;
+    border-color: var(--error-color);
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+    color: white;
+}
+
+/* --- Navbar --- */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    /* Override general container width for full navbar */
+    width: 100%;
+    max-width: 1200px; /* Keep max-width for navbar content */
+    margin: 0 auto; /* Center navbar content */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+/* Hamburger Styles */
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    transition: var(--transition);
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* --- Landing Page: Hero --- */
+.hero {
+    padding: 120px 0 80px; /* Increased top padding */
+    text-align: center;
+    position: relative; /* Needed for z-index */
+    z-index: 2; /* Above background video */
+    color: white; /* Make text white for video background */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Add shadow for readability */
+}
+
+.hero .hero-content {
+     max-width: 900px; /* Limit text width */
+     margin: 0 auto; /* Center content block */
+     padding: 20px 30px;
+     border-radius: var(--border-radius);
+}
+
+.hero h1 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    color: white; /* Ensure heading is white */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #eee; /* Lighter text color */
+    margin-bottom: 2rem;
+}
+
+/* --- Landing Page: Features --- */
+.features {
+    padding: 60px 0; /* Reduced padding slightly */
+    text-align: center;
+    background-color: rgb(255, 255, 255,0.5); /* Use a semi-transparent white background */
+    position: relative; /* Needed for z-index */
+    z-index: 2; /* Above background video */
+}
+
+.features h2 {
+    margin-bottom: 3rem;
+    color: var(--text-color); /* Reset color from potential inheritance */
+    text-shadow: none; /* Remove text shadow */
+}
+
+/* --- Modified for Flexbox layout --- */
+.features-flex-container {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center items if space allows */
+    gap: 20px; /* Reduced gap between cards */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    padding-bottom: 15px; /* Space for scrollbar */
+    /* Remove grid styles */
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); <-- REMOVED */
+}
+
+/* --- Modified feature card size --- */
+.feature-card {
+    flex: 0 0 220px; /* Don't grow, don't shrink, base width 220px */
+    /* width: 220px; <-- Alternative to flex-basis */
+    padding: 20px; /* Reduced padding */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    background-color: #fff; /* Solid background for card */
+    border: 1px solid var(--border-color);
+    text-align: center; /* Ensure text inside is centered */
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Reduced icon size --- */
+.feature-icon {
+    font-size: 2rem; /* Reduced icon size */
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.1rem; /* Slightly smaller heading */
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    font-size: 0.9rem; /* Slightly smaller text */
+    color: var(--text-light);
+    margin-bottom: 0; /* Remove bottom margin for tighter fit */
+}
+
+
+/* --- REMOVED Sections Styles --- */
+/* Styles for .how-it-works, .about, .contact are removed */
+
+
+/* --- Common Form Group Styling --- */
+/* (Keep if used elsewhere) */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="url"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: var(--text-light);
+    font-size: 0.8rem;
+}
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+.form-row .form-group {
+    flex: 1;
+}
+
+/* --- Templates Page Styles (`Templates.html`) --- */
+/* (Keep all template page styles) */
+.templates-hero {
+    padding: 60px 0;
+    background-color: var(--background-alt);
+    text-align: center;
+    position: relative; z-index: 2; /* Ensure above potential video */
+}
+.templates-hero h1 { margin-bottom: 15px; font-size: 2.5rem; }
+.templates-hero p { max-width: 600px; margin: 0 auto; color: var(--text-light); }
+.templates-grid { padding: 60px 0; position: relative; z-index: 2; /* Ensure above potential video */ }
+.templates { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
+.template-card { background-color: white; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--box-shadow); transition: var(--transition); }
+.template-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
+.template-image { height: 400px; overflow: hidden; background-color: #eee; }
+.template-image img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.3s ease; }
+.template-card:hover .template-image img { transform: scale(1.05); }
+.template-info { padding: 20px; }
+.template-info h3 { margin-bottom: 10px; }
+.template-info p { margin-bottom: 15px; color: var(--text-light); font-size: 0.9rem; }
+
+
+/* --- Form Page Styles (`Form.html`) --- */
+/* (Keep all form page styles) */
+.form-section { padding: 60px 0; position: relative; z-index: 2; }
+.form-header { text-align: center; margin-bottom: 2rem; }
+.template-preview { margin: 1rem 0 2rem; text-align: center; }
+.template-preview h2 { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-light); }
+.template-preview-img { max-width: 200px; height: auto; border: 1px solid var(--border-color); border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); margin-top: 1rem; }
+.resume-form { max-width: 800px; margin: 0 auto; background-color: white; padding: 30px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); }
+.resume-form h2 { margin-top: 2rem; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); font-size: 1.5rem; }
+.resume-form h2:first-of-type { margin-top: 0; }
+.form-divider { margin: 2rem 0; border: none; border-top: 1px dashed var(--border-color); }
+.experience-entry, .education-entry { position: relative; padding: 1.5rem 0; border-bottom: 1px dashed var(--border-color); }
+.experience-entry:first-child, .education-entry:first-child { padding-top: 0; }
+.experience-entry:last-child, .education-entry:last-child { border-bottom: none; padding-bottom: 0; }
+.remove-entry { float: right; margin-top: -2.5rem; }
+.form-actions { display: flex; justify-content: space-between; margin-top: 2rem; flex-wrap: wrap; gap: 10px; }
+
+
+/* --- Resume Page Styles (`resume.html`) --- */
+/* (Keep all resume page styles) */
+.resume-actions { position: sticky; top: 70px; z-index: 900; background-color: rgba(248, 249, 250, 0.95); backdrop-filter: blur(10px); padding: 15px 0; margin-bottom: 30px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+.resume-actions .container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; width: 100%; max-width: 1200px; }
+.resume-container { max-width: 850px; margin: 0 auto 60px; padding: 40px; background-color: white; box-shadow: var(--box-shadow); font-family: 'Inter', sans-serif; display: none; border: 1px solid var(--border-color); color: var(--text-color); line-height: 1.5; font-size: 10pt; position: relative; z-index: 2; /* Ensure above potential video */ }
+/* ... Keep ALL other specific resume styles (.template1, .template2, .resume-header, etc.) ... */
+
+
+/* --- Footer --- */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0 20px;
+    /* margin-top: 60px; <-- Removed, features section now provides separation */
+    position: relative; /* Needed for z-index */
+    z-index: 2; /* Above background video */
+}
+
+.footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; margin-bottom: 30px; }
+.footer-logo h3 { color: white; margin-bottom: 0.5rem; }
+.footer-logo p { color: rgba(255, 255, 255, 0.7); }
+.footer-links h4, .footer-social h4 { color: white; margin-bottom: 1rem; }
+.footer-links ul { display: flex; flex-direction: column; gap: 0.5rem; }
+.footer-links a { color: rgba(255, 255, 255, 0.7); }
+.footer-links a:hover { color: white; }
+.social-icons { display: flex; gap: 1rem; }
+.social-icons a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: rgba(255, 255, 255, 0.1); border-radius: 50%; color: white; transition: var(--transition); }
+.social-icons a:hover { background-color: var(--primary-color); transform: translateY(-3px); }
+.footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+.footer-bottom p { color: rgba(255, 255, 255, 0.7); margin: 0; }
+
+/* --- Responsive Styles --- */
+@media (max-width: 992px) {
+    .hero .hero-content { max-width: 80%; }
+    .features-flex-container { justify-content: flex-start; /* Align items to start on smaller screens */ }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.25rem; } /* Base size */
+
+    .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; background-color: white; flex-direction: column; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+    .nav-links.active { display: flex; }
+    .hamburger { display: flex; }
+
+    .hero { padding-top: 90px; }
+    .hero .hero-content { padding: 15px 20px; }
+
+    .features-flex-container { gap: 15px; }
+    .feature-card { flex-basis: 200px; padding: 15px; } /* Further reduce size on mobile */
+    .feature-icon { font-size: 1.8rem; }
+    .feature-card h3 { font-size: 1rem; }
+    .feature-card p { font-size: 0.85rem; }
+
+    .form-row { flex-direction: column; gap: 0; }
+    .remove-entry { position: static; float: none; display: block; margin-top: 0.5rem; text-align: right; }
+    .footer-content { flex-direction: column; text-align: center; }
+    .footer-links ul { align-items: center; }
+    .social-icons { justify-content: center; }
+    .templates { grid-template-columns: 1fr; }
+    .template-image { height: 300px; }
+    .resume-container { padding: 20px; }
+    .resume-body { flex-direction: column; gap: 0; }
+    .resume-left, .resume-right { flex: none; max-width: 100%; padding: 0 !important; border-left: none !important; margin-left: 0 !important; }
+    .resume-actions .container { flex-direction: column; gap: 10px; align-items: stretch; }
+    .resume-actions .btn { width: 100%; }
+
+    /* Optional: Disable video on mobile to save data/battery */
+    /* #backgroundVideo { display: none; } */
+    /* body { background-color: var(--background-color); } */ /* Restore background if video hidden */
+}
+
+
+/* --- Bubble Styles (from pattern.css - Keep if still desired) --- */
+/* If pattern.css is handling bubbles, these might be redundant unless */
+/* #bubble-container is used independently. Remove if pattern.css covers it. */
+#bubble-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Behind content, but above video if video is lower z-index */
+    pointer-events: none;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: floatUp ease-in infinite;
+    /* box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5); */
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) translateX(0); opacity: 0; }
+    10% { opacity: 0.7; }
+    50% { transform: translateX(calc(var(--driftX, 0) * 100px)); }
+    90% { opacity: 0.7; }
+    100% { transform: translateY(-120vh) translateX(calc(var(--driftX, 0) * 200px)); opacity: 0; }
+}
+
+

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill Your Details - Portfolio Builder</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css"> <!-- Main combined stylesheet -->
+    <link rel="stylesheet" href="pattern.css"> <!-- Optional background patterns -->
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Optional: Background pattern elements -->
+    <div class="background-pattern"></div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Portfolio Builder</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Templates.html">Templates</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger"><span></span><span></span><span></span></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Form Section -->
+    <main class="form-section">
+        <div class="container">
+            <div class="form-header">
+                <h1>Fill Your Details</h1>
+                <p>Complete the form below to create your personalized resume</p>
+            </div>
+            <!-- Template Preview Area -->
+            <div class="template-preview">
+                <h2>Selected Template: <span id="templateName">Loading...</span></h2>
+                <img id="templatePreview" src="" alt="Selected Template Preview" class="template-preview-img">
+            </div>
+            <!-- Resume Form -->
+            <form id="resumeForm" class="resume-form">
+                <h2>Personal Information</h2>
+                <div class="form-group"><label for="fullName">Full Name</label><input type="text" id="fullName" name="fullName" class="form-control" required></div>
+                <div class="form-group"><label for="professionalTitle">Professional Title</label><input type="text" id="professionalTitle" name="professionalTitle" class="form-control" required></div>
+                 <div class="form-row">
+                    <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" class="form-control" required></div>
+                    <div class="form-group"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" class="form-control"></div>
+                 </div>
+                 <div class="form-row">
+                    <div class="form-group"><label for="website">Website/Portfolio URL</label><input type="url" id="website" name="website" class="form-control" placeholder="https://example.com"></div>
+                    <div class="form-group"><label for="address">Address (Optional)</label><input type="text" id="address" name="address" class="form-control"></div>
+                 </div>
+                <hr class="form-divider">
+                <h2>Professional Summary</h2>
+                <div class="form-group"><label for="overview">Overview/Summary</label><textarea id="overview" name="overview" class="form-control" rows="4" required></textarea><small>A brief overview of your professional background.</small></div>
+                <hr class="form-divider">
+                <h2>Experience</h2>
+                <div id="experienceFields">
+                    <div class="experience-entry">
+                        <div class="form-group"><label for="expPosition0">Position Title</label><input type="text" id="expPosition0" name="expPosition[]" class="form-control position-title" required></div>
+                        <div class="form-group"><label for="expCompany0">Company</label><input type="text" id="expCompany0" name="expCompany[]" class="form-control company" required></div>
+                        <div class="form-group"><label for="expDuration0">Duration</label><input type="text" id="expDuration0" name="expDuration[]" class="form-control duration" placeholder="e.g., MM/YYYY - Present"></div>
+                        <div class="form-group"><label for="expResponsibilities0">Responsibilities & Achievements</label><textarea id="expResponsibilities0" name="expResponsibilities[]" class="form-control responsibilities" rows="3"></textarea><small>Use new lines for bullet points.</small></div>
+                    </div>
+                </div>
+                <button type="button" id="addExperience" class="btn btn-secondary btn-sm">Add Another Experience</button>
+                <hr class="form-divider">
+                <h2>Education</h2>
+                 <div id="educationFields">
+                    <div class="education-entry">
+                        <div class="form-group"><label for="eduDegree0">Degree/Certificate</label><input type="text" id="eduDegree0" name="eduDegree[]" class="form-control degree" required></div>
+                        <div class="form-group"><label for="eduInstitution0">Institution</label><input type="text" id="eduInstitution0" name="eduInstitution[]" class="form-control institution" required></div>
+                        <div class="form-group"><label for="eduDuration0">Duration</label><input type="text" id="eduDuration0" name="eduDuration[]" class="form-control duration" placeholder="e.g., YYYY - YYYY"></div>
+                    </div>
+                </div>
+                <button type="button" id="addEducation" class="btn btn-secondary btn-sm">Add Another Education</button>
+                <hr class="form-divider">
+                <h2>Skills</h2>
+                <div class="form-group"><label for="skills">Skills</label><textarea id="skills" name="skills" class="form-control" rows="3"></textarea><small>List relevant skills, separated by commas or new lines.</small></div>
+                <div class="form-actions">
+                    <a href="Templates.html" class="btn btn-secondary">Back to Templates</a>
+                    <button type="submit" id="submitResume" class="btn btn-primary">Create Resume</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><h3>Portfolio Builder</h3><p>Create professional portfolios in minutes</p></div>
+                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="Templates.html">Templates</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+                <div class="footer-social"><h4>Connect With Us</h4><div class="social-icons"><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></div></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Portfolio Builder. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script src="form.js"></script>
+</body>
+</html>
