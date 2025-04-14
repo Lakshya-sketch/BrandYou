@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- *** CHANGE TITLE *** -->
-    <title>About Us - BrandYou</title>
-    <!-- Stylesheets (Keep same as template.html) -->
-    <link rel="stylesheet" href="about.css"> <!-- Main combined stylesheet -->
+    <title>Your Profile - Portfolio Builder</title>
+    <!-- Stylesheets (Keep same as template/about.html) -->
     <link rel="stylesheet" href="styles.css"> <!-- Main combined stylesheet -->
     <link rel="stylesheet" href="pattern.css"> <!-- Optional background patterns -->
+    <!-- *** ADD profile.css LINK *** -->
+    <link rel="stylesheet" href="profile.css"> <!-- Styles specific to the profile page -->
     <!-- External Libraries (Keep same as template.html) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Bubble Animation Section (Copied from template.html) -->
+    <!-- Bubble Animation Section (Copied from template/about.html) -->
     <div class="bubble-wrapper">
         <span></span><span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span><span></span>
@@ -35,8 +36,7 @@
     </style>
     <!-- Bubble Animation Section End -->
 
-
-    <!-- Navbar (Copied & Modified Active Link) -->
+    <!-- Navbar (Copied & Modified Active Link - Assuming a profile link exists) -->
     <header class="navbar">
         <div class="container">
             <a href="index.html" class="logo">BrandYou</a>
@@ -44,41 +44,36 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="templates.html">Templates</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="profile.html"><i class="fas fa-user"></i></a></li>
+                    <li><a href="profile.html" class="active"></a></li>
+                    <!-- You might conditionally show Profile/Login links based on auth status later -->
                 </ul>
                 <div class="hamburger"><span></span><span></span><span></span></div>
             </nav>
         </div>
     </header>
 
-    <!-- About Us Hero Section (Similar structure to templates-hero) -->
-    <section class="page-hero" style="padding: 4rem 0; text-align: center; background: rgba(0,0,0,0.2); /* Optional subtle bg */">
+    <!-- Profile Hero Section (Similar structure to about/contact) -->
+    <section class="page-hero">
         <div class="container">
-            <h1>About Portfolio Builder</h1>
-            <p>Learn more about our mission, vision, and the team behind the tool.</p>
+            <h1>Your Profile</h1>
+            <p>Manage your account details, security settings, and connected accounts.</p>
         </div>
     </section>
 
-    <!-- About Us Content Section -->
-    <section class="page-content" style="padding: 3rem 0;">
-        <div class="container" style="max-width: 900px; margin: 0 auto; background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 8px; color: #eee;">
-            
-            <h2>Our Mission</h2>
-            <p style="margin-bottom: 1.5rem;">
-                Our mission is to empower individuals to create stunning, professional online portfolios quickly and easily. We believe everyone deserves a great platform to showcase their skills and achievements, regardless of their technical expertise.
-            </p>
+    <!-- Profile Content Section -->
+    <section class="page-content">
+        <div class="container profile-container"> <!-- Added profile-container class -->
 
-            <h2>Our Vision</h2>
-            <p style="margin-bottom: 1.5rem;">
-                We envision a world where creating a personal portfolio is as simple as writing an email. We aim to be the leading solution for effortless portfolio creation, helping people land their dream jobs, attract clients, and build their personal brand.
-            </p>
+            <!-- Status Message Area -->
+            <div id="profile-status" style="text-align: center; margin-bottom: 1rem;">Loading your profile...</div>
 
-            <h2>Our Story</h2>
-            <p style="margin-bottom: 1.5rem;">
-                Portfolio Builder started as a small project fueled by the frustration of seeing talented individuals struggle with complex website builders. We wanted to create something intuitive, beautiful, and effective. [Add more details about your founding story here].
-            </p>
+            <!-- Target div for the Clerk UserProfile component -->
+            <div id="clerk-user-profile-target">
+                <!-- Clerk component will be mounted here by JS -->
+            </div>
+
         </div>
     </section>
 
@@ -86,15 +81,16 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo"><h3>BrandYou/h3><p>Create professional portfolios in minutes</p></div>
+                <div class="footer-logo"><h3>Portfolio Builder</h3><p>Create professional portfolios in minutes</p></div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="templates.html">Templates</a></li>
-                        <!-- *** UPDATE href *** -->
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                         <!-- *** ADD PROFILE LINK if not already present *** -->
+                        <li><a href="profile.html">Profile</a></li>
                     </ul>
                 </div>
                 <div class="footer-social">
@@ -111,7 +107,9 @@
         </div>
     </footer>
 
+    <!-- *** Include the NEW profile.js script *** -->
+    <script src="profile.js"></script>
     <!-- Common JavaScript (Keep same as template.html) -->
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- If script.js handles navbar/etc -->
 </body>
 </html>

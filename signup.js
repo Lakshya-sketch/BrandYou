@@ -27,9 +27,9 @@ const startClerk = async () => {
             // Mount the SignUp component
             Clerk.mountSignUp(signUpContainer, {
                 // --- Configuration Options ---
-                signInUrl: '/login.html', // REQUIRED: Path to your login page
-
-                // redirectUrl: '/dashboard.html', // Optional: Redirect after successful sign up
+                signInUrl: 'BrandYou/login.html', // REQUIRED: Path to your login page
+                redirectUrl: 'BrandYou/templates.html', // <--- Set your desired page here
+                
 
                 // Appearance settings to match your dark theme
                 appearance: {

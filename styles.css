@@ -229,6 +229,8 @@ p {
     gap: 40px;
 }
 
+
+
 .hero-content {
     flex: 1;
 }
@@ -1609,9 +1611,10 @@ body {
 /* .content-over-video { position: relative; z-index: 1; color: white; text-shadow: 1px 1px 2px black; } */
 
 
+
 /* --- Container Centering --- */
 .container {
-    width: 80%;
+    width: 100%;
     /* Or adjust percentage as needed */
     max-width: 1200px;
     /* Max width for content */
@@ -1834,6 +1837,8 @@ p {
     border-radius: var(--border-radius);
 }
 
+
+
 .hero h1 {
     margin-bottom: 1rem;
     font-size: 3rem;
@@ -1847,6 +1852,75 @@ p {
     /* Lighter text color */
     margin-bottom: 2rem;
 }
+
+/* --- Logo/Image Marquee --- */
+.logo-marquee-section {
+    padding: 2rem 0; /* Space above and below the marquee */
+    background-color: rgba(255, 255, 255, 0.03); /* Optional subtle background */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.marquee-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.image-marquee-container {
+    width: 100%;
+    overflow: hidden; /* Crucial: Hides the parts of the track outside */
+    position: relative; /* Needed for potential gradient overlays if desired */
+    /* Optional: Add fading edges */
+    /* -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%); */
+    /* mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%); */
+}
+
+.image-marquee-track {
+    display: flex; /* Arrange images horizontally */
+    gap: 3rem; /* Space between images (adjust as needed) */
+    width: max-content; /* Make track wide enough for all images */
+    animation: scrollLeft 25s linear infinite; /* The animation magic */
+    align-items: center; /* Vertically align images if heights differ */
+}
+
+/* Optional: Pause animation on hover */
+.image-marquee-container:hover .image-marquee-track {
+    animation-play-state: paused;
+}
+
+.image-marquee-track img {
+    height: 40px; /* << Set desired 'tiny' height here */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensures image fits within height without distortion */
+    flex-shrink: 0; /* Prevent images from shrinking */
+    opacity: 0.7; /* Optional: Make logos slightly subtle */
+    filter: grayscale(50%); /* Optional: Partially desaturate */
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+/* Optional: Increase visibility on hover */
+.image-marquee-container:hover .image-marquee-track img {
+     opacity: 1;
+     filter: grayscale(0%);
+}
+
+
+/* Keyframe animation for scrolling */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move left by the width of the first set of images + gaps */
+        /* Since we duplicated the images, moving 50% scrolls one full set */
+        transform: translateX(-50%);
+    }
+}
+
+
 
 /* --- Landing Page: Features --- */
 .features {

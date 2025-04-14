@@ -7,7 +7,7 @@ const ResumeHandler = (function() {
     let resumeData = null; let templateId = '1'; const serverUrl = 'http://localhost:3001/generate-pdf';
     function init() {
         console.log("ResumeHandler init starting..."); loadData();
-        if (!resumeData) { console.error("No data. Redirecting..."); alert("Resume data not found."); window.location.href = 'Templates.html'; return; }
+        if (!resumeData) { console.error("No data. Redirecting..."); alert("Resume data not found."); window.location.href = 'templates.html'; return; }
         templateId = resumeData.template || '1'; console.log("Using template ID:", templateId);
         showTemplate(); setupListeners(); console.log("ResumeHandler init finished.");
     }
@@ -22,7 +22,7 @@ const ResumeHandler = (function() {
         else { console.error(`Container ${containerId} not found!`); const first = document.querySelector('.resume-container'); if (first) { first.style.display = 'block'; populateTemplate(first, resumeData); templateId = first.id.replace('template', ''); alert(`Warning: Template ${containerId} not found. Showing default.`); } else { alert("Error: No templates found."); return; } }
         updateEditLink();
     }
-    function updateEditLink() { const btn = document.getElementById('editBtn'); if (btn) { if (templateId && document.getElementById(`template${templateId}`)) btn.href = `Form.html?template=${templateId}`; else btn.href = 'Templates.html'; } }
+    function updateEditLink() { const btn = document.getElementById('editBtn'); if (btn) { if (templateId && document.getElementById(`template${templateId}`)) btn.href = `Form.html?template=${templateId}`; else btn.href = 'templates.html'; } }
     function populateTemplate(container, data) {
         if (!container || !data) return;
         const setText = (sel, txt) => { const el = container.querySelector(sel); if (el) el.textContent = txt || ''; }; const setHtml = (sel, h) => { const el = container.querySelector(sel); if (el) el.innerHTML = h || ''; };

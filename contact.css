@@ -76,7 +76,7 @@ body {
 .contact-form-container h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: #fff; /* Or inherit */
+    color: #ffffff; /* Or inherit */
 }
 
 .contact-form {
@@ -88,7 +88,7 @@ body {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
-    color: #ccc;
+    color: #000000;
 }
 
 .contact-form input[type="text"],
@@ -97,7 +97,7 @@ body {
     width: 100%;
     padding: 0.8rem;
     margin-bottom: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.2);
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     color: rgba(0, 0, 0, 0.8);

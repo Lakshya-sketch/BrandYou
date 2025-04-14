@@ -7,6 +7,50 @@ const statusDiv = document.getElementById('clerk-status');
 // Function to initialize Clerk and mount the SignIn component
 const startClerk = async () => {
     // ClerkJS attaches itself to the window object
+
+    // Inside login.js
+
+    // ... (Clerk key, statusDiv, etc.) ...
+
+    const startClerk = async () => {
+        // ... (Clerk loading logic) ...
+
+        try {
+            await Clerk.load();
+            console.log("Clerk loaded successfully.");
+
+            const signInContainer = document.getElementById('clerk-signin-target');
+
+            if (signInContainer) {
+                Clerk.mountSignIn(signInContainer, {
+                    // --- Configuration Options ---
+                    signUpUrl: 'signup.html', // Relative path to signup
+                    redirectUrl: 'BrandYou/templates.html', // Relative path to templates
+                
+                    // Appearance settings
+                    appearance: {
+                        baseTheme: 'dark',
+                        variables: {
+                            colorPrimary: '#4361ee',
+                            colorBackground: 'hsl(231, 30%, 18%)',
+                            colorInputBackground: 'rgba(255, 255, 255, 0.1)',
+                            colorInputText: 'white',
+                        },
+                    },
+                });
+                console.log("Clerk SignIn component mounted.");
+            } else {
+                // ... (error handling) ...
+            }
+        } catch (err) {
+            // ... (error handling) ...
+        }
+    };
+
+    // ... (ClerkJS dynamic loading IIFE) ...
+
+
+
     const Clerk = window.Clerk;
 
     if (!Clerk) {
@@ -28,18 +72,18 @@ const startClerk = async () => {
             // Mount the SignIn component (DIFFERENT from SignUp)
             Clerk.mountSignIn(signInContainer, {
                 // --- Configuration Options ---
-                signUpUrl: '/signup.html', // REQUIRED: Path to your signup page
-                // redirectUrl: '/dashboard.html', // Optional: Redirect after successful sign in
-                // Appearance settings to match your dark theme (same as signup)
+                signUpUrl: 'signup.html', // Relative path to signup
+                redirectUrl: 'BrandYou/templates.html', // Relative path to templates
+            
+                // Appearance settings
                 appearance: {
                     baseTheme: 'dark',
                     variables: {
                         colorPrimary: '#4361ee',
-                        colorBackground: 'hsl(231, 30%, 18%)', // Match your .auth-section background
+                        colorBackground: 'hsl(231, 30%, 18%)',
                         colorInputBackground: 'rgba(255, 255, 255, 0.1)',
                         colorInputText: 'white',
                     },
-                    // layout: { socialButtonsPlacement: 'bottom' } // Optional layout adjustments
                 },
             });
             console.log("Clerk SignIn component mounted.");

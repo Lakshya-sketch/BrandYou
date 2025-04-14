@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,29 +9,49 @@
     <link rel="stylesheet" href="styles.css"> <!-- Main combined stylesheet -->
     <link rel="stylesheet" href="pattern.css"> <!-- Background pattern styles (might be overridden/hidden by video) -->
     <!-- External Libraries -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"> <!-- Google Font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Font -->
 </head>
+
 <body>
 
-    <!-- <video autoplay muted loop id="backgroundVideo" poster="placeholder.jpg">
-        <source src="7529-201118756.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video> -->
+    <div class="background-image">
+        <img src="/BrandYou/images/landingpagebackground.jpg" alt="Background Image">
+    </div>
+    <style>
+        .background-image {
+            position: absolute;
+            left: -100px;
+            width: 110%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            filter: blur(5px);
+        }
 
-
+        .background-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
     <!-- Navbar -->
     <header class="navbar">
         <div class="container">
             <a href="index.html" class="logo">BrandYou</a>
             <nav>
                 <ul class="nav-links">
+
                     <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="signup.html">Templates</a></li>
-                    <!-- Added Profile Link -->
-                    <li><a href="signup.html"><i class="fas fa-user"></i> Profile</a></li>
-                    <!-- Removed About link -->
-                    <!-- Removed Contact link -->
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="profile.html"><i class="fas fa-user"></a></i></li>
+
+
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -48,10 +69,35 @@
                 <h1>Create Your Professional Portfolio</h1>
                 <p>Build and download a stunning resume in minutes with our easy-to-use templates</p>
                 <!-- Changed href to signup.html -->
-                <a href="signup.html" class="btn btn-primary">Get Started</a>
+                <a href="/BrandYou/signup.html" class="btn btn-primary">Get Started</a>
             </div>
         </div>
     </section>
+
+    <!-- Logo/Image Marquee Section -->
+    <section class="logo-marquee-section">
+        <div class="container">
+            <p class="marquee-title">Trusted by Leading Creatives & Brands</p> <!-- Optional Title -->
+            <div class="image-marquee-container">
+                <div class="image-marquee-track">
+                    <!-- Add your 5 images (logos work well here) -->
+                    <img src="/BrandYou/images/apple.jpg" alt="Partner Logo 1">
+                    <img src="/BrandYou/images/facebook.png" alt="Partner Logo 2">
+                    <img src="/BrandYou/images/Google.png" alt="Partner Logo 3">
+                    <img src="/BrandYou/images/netflix.jpg" alt="Partner Logo 4">
+                    <img src="/BrandYou/images/download.png" alt="Partner Logo 5">
+                    <!-- Duplicate the images for a seamless loop -->
+                    <img src="/BrandYou/images/apple.jpg" alt="Partner Logo 1">
+                    <img src="/BrandYou/images/facebook.png" alt="Partner Logo 2">
+                    <img src="/BrandYou/images/Google.png" alt="Partner Logo 3">
+                    <img src="/BrandYou/images/netflix.jpg" alt="Partner Logo 4">
+                    <img src="/BrandYou/images/download.png" alt="Partner Logo 5">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Logo/Image Marquee Section -->
+
 
     <!-- Features Section -->
     <section class="features">
@@ -86,13 +132,17 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo"><h3>Portfolio Builder</h3><p>Create professional portfolios in minutes</p></div>
+                <div class="footer-logo">
+                    <h3>Portfolio Builder</h3>
+                    <p>Create professional portfolios in minutes</p>
+                </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="signup.html">Templates</a></li>
                         <li><a href="signup.html">Profile</a></li> <!-- Added profile link here too -->
+
                         <!-- Removed About link -->
                         <!-- Removed Contact link -->
                     </ul>
@@ -107,11 +157,81 @@
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2025 Portfolio Builder. All rights reserved.</p></div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Portfolio Builder. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
     <!-- Common JavaScript -->
+     <script>
+        // --- Function to update UI based on login status ---
+function updateUIBasedOnAuthState(ClerkInstance) {
+    const getStartedButton = document.querySelector('.hero-section .btn-primary');
+    const profileLink = document.querySelector('.nav-profile-link');
+    const signupLink = document.querySelector('.nav-signup-link');
+    const loginLink = document.querySelector('.nav-login-link');
+
+    // ** Select the logout list item and the button **
+    const logoutListItem = document.getElementById('logout-li');
+    const logoutButton = document.getElementById('logout'); // Use the correct ID 'logout'
+
+    // Determine if user exists
+    const isLoggedIn = !!ClerkInstance && !!ClerkInstance.user;
+
+    // Update Get Started Button
+    if (getStartedButton) {
+        if (isLoggedIn) {
+            getStartedButton.textContent = 'Go to Profile';
+            getStartedButton.href = 'profile.html';
+        } else {
+            getStartedButton.textContent = 'Get Started';
+            getStartedButton.href = 'signup.html';
+        }
+    } else {
+        console.warn("Could not find '.hero-section .btn-primary' button to update.");
+    }
+
+    // Update Navbar Links & Logout Button visibility
+    if (profileLink) profileLink.style.display = isLoggedIn ? 'block' : 'none';
+    if (signupLink) signupLink.style.display = isLoggedIn ? 'none' : 'block';
+    if (loginLink) loginLink.style.display = isLoggedIn ? 'none' : 'block';
+
+    // ** Update Logout Button/List Item Visibility and Add Listener **
+    if (logoutListItem && logoutButton) { // Check if both elements exist
+        logoutListItem.style.display = isLoggedIn ? 'block' : 'none'; // Show/hide the whole list item
+
+        if (isLoggedIn) {
+            // Ensure listener is attached only once / correctly
+            const newLogoutButton = logoutButton.cloneNode(true);
+            logoutButton.parentNode.replaceChild(newLogoutButton, logoutButton);
+
+            newLogoutButton.addEventListener('click', async () => {
+                console.log("Logout button clicked.");
+                if (!ClerkInstance) return; // Safety check
+                try {
+                    // ** Call Clerk Sign Out **
+                    await ClerkInstance.signOut();
+                    console.log("Clerk sign out successful.");
+                    // ** Redirect after logout **
+                    window.location.href = '/index.html'; // Redirect to home page
+                } catch (error) {
+                    console.error("Error signing out:", error);
+                }
+            });
+        }
+    } else {
+         if (!logoutListItem) console.warn("Logout list item '#logout-li' not found.");
+         if (!logoutButton) console.warn("Logout button '#logout' not found.");
+    }
+}
+
+// --- Keep the rest of the script block the same ---
+// (onClerkLoaded function, dynamic script loading IIFE)
+// ...
+
+     </script>
     <script src="script.js"></script>
 </body>
+
 </html>

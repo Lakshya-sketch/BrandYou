@@ -1,0 +1,53 @@
+/* Profile Page Styles */
+
+/* Import styles from about.css if they are general page styles */
+/* Or ensure main styles.css covers .page-hero and general layout */
+
+.page-hero {
+    padding: 4rem 0;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2); /* Consistent hero background */
+}
+
+.page-hero h1 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.page-hero p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.page-content {
+    padding: 3rem 1rem; /* Add padding */
+}
+
+/* Container specific to the profile content area */
+.profile-container {
+    max-width: 800px; /* Adjust width as needed for the profile component */
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05); /* Subtle background for the content area */
+    border-radius: 8px;
+    padding: 2rem; /* Padding inside the container */
+    color: #eee;
+}
+
+/* Style the status message */
+#profile-status {
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+}
+
+/* The Clerk UserProfile component will be mounted here.
+   Clerk's `appearance` prop will handle most internal styling.
+   This target div ensures it's placed correctly within our layout. */
+#clerk-user-profile-target {
+    /* Ensure it takes up necessary space */
+    width: 100%;
+}
+
+/* Optional: Add minor adjustments if Clerk component needs alignment */
+/* Example: Center Clerk component if container is wider */
+/* #clerk-user-profile-target > div { margin: 0 auto; } */
+
