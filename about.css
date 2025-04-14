@@ -1,0 +1,48 @@
+/* About Us Page Styles */
+
+body {
+    /* Basic body styles if not already in styles.css */
+    /* background-color: #0c1021; */
+    /* color: #eee; */
+    font-family: 'Inter', sans-serif; /* Ensure font consistency */
+    line-height: 1.6;
+}
+
+.page-hero {
+    padding: 4rem 0;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2); /* Optional background */
+}
+
+.page-hero h1 {
+    font-size: 2.5rem;
+    color: #fff; /* Or inherit from body/styles.css */
+}
+
+.page-hero p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8); /* Or inherit */
+}
+
+.page-content {
+    padding: 3rem 2rem; /* Added horizontal padding */
+    max-width: 900px;
+    margin: 3rem auto; /* Add top/bottom margin */
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: #eee; /* Or inherit */
+}
+
+.page-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff; /* Or inherit */
+}
+
+.page-content p {
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.8); /* Or inherit */
+}
+
+/* Note: General styles for body, container, navbar, footer, bubbles
+   should remain in your main styles.css or template's embedded styles */

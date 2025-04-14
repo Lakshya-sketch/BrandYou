@@ -1,9 +1,10 @@
 /* Base Resume Styles */
 .resume-container {
-    max-width: 800px;
+    max-width: 1200px;
+    min-width: 1000px;
     margin: 0 auto 60px;
     padding: 40px;
-    background-color: white;
+    background-color: rgba(248, 249, 250, 0.6);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: 'Inter', sans-serif;
     display: none; /* Hide all templates by default */

@@ -1,0 +1,134 @@
+/* Contact Us Page Styles */
+
+body {
+    background-color: #0c1021;
+    color: #eee;
+    font-family: 'Inter', sans-serif; /* Ensure font consistency */
+    line-height: 1.6;
+}
+
+.page-hero {
+    padding: 4rem 0;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.page-hero h1 {
+    font-size: 2.5rem;
+    color: #fff; /* Or inherit */
+}
+
+.page-hero p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8); /* Or inherit */
+}
+
+.page-content {
+    padding: 3rem 2rem; /* Adjusted padding */
+    max-width: 1200px;
+    margin: 3rem auto; /* Added margin */
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: #eee; /* Or inherit */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 280px;
+}
+
+.contact-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #fff; /* Or inherit */
+}
+.contact-info h4 {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #fff; /* Or inherit */
+}
+
+.contact-info p {
+    margin-bottom: 0.8rem;
+    display: flex;
+    /* align-items: center; Removed - align-items: flex-start might be better for addresses */
+    align-items: flex-start;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-info i {
+    margin-right: 10px;
+    margin-top: 0.2em; /* Align icon better with first line of text */
+    color: var(--primary-color, #4361ee); /* Use variable from styles.css if defined */
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.contact-form-container {
+    flex: 1.5;
+    min-width: 300px;
+}
+.contact-form-container h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #fff; /* Or inherit */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #ccc;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 1rem;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form button {
+    
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color, #4361ee);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Remove hover style if defined in styles.css */
+/*
+.contact-form button:hover {
+    background-color: #3a52cc;
+}
+*/
+
+/* Note: General styles for body, container, navbar, footer, bubbles, buttons
+   should remain in your main styles.css or template's embedded styles */
+
